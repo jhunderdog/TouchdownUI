@@ -37,6 +37,8 @@ struct ContentView: View {
                             }
                         })
                             .padding(15)
+                        TitleView(title: "Brands")
+                        BrandGridView()
                         FooterView()
                             .padding(.horizontal)
                     }
@@ -55,5 +57,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 12 Pro")
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
