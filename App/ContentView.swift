@@ -29,14 +29,21 @@ struct ContentView: View {
                         FeaturedTabView()
                             .padding(.vertical, 20)
                             .frame(minHeight: 150, idealHeight: 250, maxHeight: .infinity, alignment: .center)
-                            
+                        CategoryGridView()
+                        TitleView(title: "Helmets")
+                        LazyVGrid(columns: gridLayout,  spacing: 15, content: {
+                            ForEach(products) { product in
+                                ProductItemView(product: product)
+                            }
+                        })
+                            .padding(15)
                         FooterView()
                             .padding(.horizontal)
                     }
                     
                 })
                 
-            }
+            } // VSTACK
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
         } // ZSTACK
         .ignoresSafeArea(.all, edges: .top)
